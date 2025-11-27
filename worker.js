@@ -30,13 +30,14 @@ export default {
       // 记录请求头
       console.log('\n--- 请求 Headers ---');
       const headers = new Headers(request.headers);
-      headers.forEach((value, key) => {
-        console.log(`${key}: ${value}`);
-      });
+       console.log(`${headers}`);
+      // headers.forEach((value, key) => {
+      //   console.log(`${key}: ${value}`);
+      // });
 
       // 构建目标 URL，保持原始路径和查询参数
       const targetUrl = `${TARGET_URL}${url.pathname}${url.search}`;
-      console.log('\n--- 目标信息 ---');
+      // console.log('\n--- 目标信息 ---');
       console.log('目标URL:', targetUrl);
 
       // 复制请求头，并修改 Host 和 Origin
@@ -144,9 +145,10 @@ export default {
       // 获取响应内容类型
       const contentType = responseHeaders.get('content-type') || '';
       console.log('\n--- 响应 Headers ---');
-      responseHeaders.forEach((value, key) => {
-        console.log(`${key}: ${value}`);
-      });
+       console.log(`${responseHeaders}`)
+      // responseHeaders.forEach((value, key) => {
+      //   console.log(`${key}: ${value}`);
+      // });
 
       // 检查是否是文本内容类型（只有这些才需要 URL 重写）
       const isTextContent =
